@@ -20,8 +20,13 @@ export class Shipment {
   @Column({ length: 100 })
   courier!: string;
 
-  @Column({ name: 'tracking_number', length: 100, nullable: true })
-  trackingNumber!: string | null;
+@Column({
+  name: 'tracking_number',
+  type: 'varchar',
+  length: 100,
+  nullable: true,
+})
+trackingNumber!: string | null;
 
   @Column({ length: 30, default: 'pending' })
   status!: string;
